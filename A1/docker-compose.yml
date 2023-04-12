@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  container1:
+    image: singhutsav/image1
+    container_name: container1
+    ports:
+      - 5000:5000
+    volumes:
+      - ./:/src/
+    networks:
+      - con-network
+
+  container2:
+    image: singhutsav/image2
+    container_name: container2
+    ports:
+      - 5001:5001
+    volumes:
+      - ./:/src/
+    networks:
+      - con-network
+
+networks:
+  con-network:
+    driver: bridge
+
+
+
